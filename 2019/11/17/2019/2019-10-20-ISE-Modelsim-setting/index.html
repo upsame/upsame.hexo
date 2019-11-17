@@ -17,26 +17,44 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>国产FPGA生存现状 | 蒲山牧</title>
-  <meta name="description" content="国产FPGA生存现状">
-<meta name="keywords" content="FPGA	Summary">
+  <title>ISE和Modelsim联合仿真 | 蒲山牧</title>
+  <meta name="description" content="ISE和Modelsim联合仿真">
+<meta name="keywords" content="FPGA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="国产FPGA生存现状">
-<meta property="og:url" content="https:&#x2F;&#x2F;upsame.coding.me&#x2F;2019&#x2F;10&#x2F;25&#x2F;2019-10-25-FPGA&#x2F;index.html">
+<meta property="og:title" content="ISE和Modelsim联合仿真">
+<meta property="og:url" content="https:&#x2F;&#x2F;upsame.coding.me&#x2F;2019&#x2F;11&#x2F;17&#x2F;2019&#x2F;2019-10-20-ISE-Modelsim-setting&#x2F;index.html">
 <meta property="og:site_name" content="蒲山牧">
-<meta property="og:description" content="国产FPGA生存现状">
+<meta property="og:description" content="ISE和Modelsim联合仿真">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;fpga.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;xilinx-3q19.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;www.mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;5G基站覆盖.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;www.mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;5G基站覆盖.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;www.mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;fpga-power-xilinx.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;www.mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;fpga-power-xilinx.jpg">
-<meta property="og:updated_time" content="2019-10-26T07:18:47.998Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;bc2.net&#x2F;assets&#x2F;image&#x2F;2019&#x2F;ISE-Modelsim-pic1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;21&#x2F;K1ygMQ.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;21&#x2F;K1yIiV.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151420922.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151436947.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151501530.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151520693.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151542914.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154407271.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154449699.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154530919.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019102216022876.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160214743.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160204811.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160146654.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154542307.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154619864.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022163201248.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155546687.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155953929.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160003349.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155530805.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155518618.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154930555.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-10-23T13:17:33.778Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.mr-wu.cn&#x2F;wp-content&#x2F;uploads&#x2F;2019&#x2F;04&#x2F;fpga.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;bc2.net&#x2F;assets&#x2F;image&#x2F;2019&#x2F;ISE-Modelsim-pic1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://upsame.coding.me/2019/10/25/2019-10-25-FPGA/index.html">
+  <link rel="canonical" href="https://upsame.coding.me/2019/11/17/2019/2019-10-20-ISE-Modelsim-setting/index.html">
   
     <link rel="alternate" href="/atom.xml" title="蒲山牧" type="application/atom+xml">
   
@@ -351,14 +369,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-2019-10-25-FPGA" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-2019/2019-10-20-ISE-Modelsim-setting" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      国产FPGA生存现状
+      ISE和Modelsim联合仿真
     </h1>
   
 
@@ -366,8 +384,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/10/25/2019-10-25-FPGA/" class="article-date">
-	  <time datetime="2019-10-24T16:00:00.000Z" itemprop="datePublished">2019-10-25</time>
+	<a href="/2019/11/17/2019/2019-10-20-ISE-Modelsim-setting/" class="article-date">
+	  <time datetime="2019-11-17T11:38:05.629Z" itemprop="datePublished">2019-11-17</time>
 	</a>
 </span>
         
@@ -379,27 +397,80 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/FPGASummary/" rel="tag">FPGA	Summary</a>
+	<a class="article-tag-link" href="/tags/FPGA/" rel="tag">FPGA</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/10/25/2019-10-25-FPGA/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/17/2019/2019-10-20-ISE-Modelsim-setting/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <blockquote>
-<p>转载自 吴川斌的博客 <a href="https://www.mr-wu.cn" target="_blank" rel="noopener">https://www.mr-wu.cn</a><br>原文链接 <a href="https://www.mr-wu.cn/guo-chan-fpga-sheng-cun-xian-zhuang/" target="_blank" rel="noopener">https://www.mr-wu.cn/guo-chan-fpga-sheng-cun-xian-zhuang/</a></p>
+<p>原创<br>首发于我的个人博客 <a href="https://www.upsame.com" target="_blank"> www.upsame.com </a></p>
 </blockquote>
-<p><img src="https://www.mr-wu.cn/wp-content/uploads/2019/04/fpga.png" alt=""></p>
-<h1 class="post-image-title">国产FPGA生存现状</h1>
-<div class="entry-body"><div class="entry-content clearfix"><p>最近，一份关于FPGA巨头Xilinx赛灵思的财报老wu觉得蛮有意思，2019 财年第三季度，赛灵思净收入8 亿美元，同比上涨 34%，这是赛灵思<strong>“里程碑式的成就”</strong>——首次实现了8亿美元的收入，<strong>同时盈利再次创下了公司的纪录</strong>。财报发布次日，赛灵思股价应声上涨 18%，在科技股寒冬中可谓逆势走强。其中，通信业务得益于全球 4G LET 和 5G 的部署，增幅达到 41%， 在各业务板块中增幅最高。通信板块的增长主要受益于韩国 5G 部署和中国 5G 部署的提早开始。
-
-<p><img src="https://mr-wu.cn/wp-content/uploads/2019/04/xilinx-3q19.png" alt=""></p>
-<p>随着未来几年大量5G基站的部署，给国外移动通信厂商带来可观的利润增长那是肯定，但没想到国外FPGA厂家也能赚个盆满钵满，还是<strong>创纪录式的盈利</strong>。</p><p><a href="http://www.mr-wu.cn/wp-content/uploads/2019/04/5G基站覆盖.png" target="_blank" rel="noopener"><img class="aligncenter size-full wp-image-13695 lazyloaded" src="http://www.mr-wu.cn/wp-content/uploads/2019/04/5G基站覆盖.png" alt="" width="591" height="403" data-lazy-src="http://www.mr-wu.cn/wp-content/uploads/2019/04/5G基站覆盖.png" data-was-processed="true"><noscript><img class="aligncenter size-full wp-image-13695" src="http://www.mr-wu.cn/wp-content/uploads/2019/04/5G基站覆盖.png" alt="" width="591" height="403" /></noscript></a>这得益于无线通信、航空航天和国防、测试测量和仿真市场的强势带动，赛灵思在每个主要终端市场都取得了增长。特别是5G无线通信市场，5G时代用的频率很可能从4G时代的1.8G提升至3.5G，这意味着其频率穿透性会变差，衰减也会更快，基站覆盖范围要远小于3G、4G基站。有数据显示，一个3G基站可以覆盖的区域可能需要4-5个5G基站覆盖。高通曾在旧金山做过实验，0.1个平方公里的区域，需要部署174个2.8G频段的小基站，然后才能达到5G的服务标准。这意味着需要运营商需要购买数倍的基站，这也带动了赛灵思业务的增长。</p><p><strong>5G 与 FPGA 有什么关联？</strong></p><p>5G 网络的典型特点包括高速度、泛在网、低功耗、低延时，以及更高的可扩展性、智能性和异构性。 为满足这些新的要求，5G 网络必须采用许多新的技术，比如海量 MI-MO、云 RAN、新的基带和 RF 架构 等，而这些新的技术存在不确定性和较长的优化和迭代过程，而且市场上短期内没有形成统一的方案， 在网络应用和运维通过较长时间达到最优之前，都需要 FPGA 方案解决。FPGA 两大国际巨头赛灵思和英特尔都将 5G 通信作为未来几年的战略方向之一。</p><p><strong>Xilinx赛灵思在FPGA界是怎么个存在？</strong></p><p><a href="http://www.mr-wu.cn/wp-content/uploads/2019/04/fpga-power-xilinx.jpg" target="_blank" rel="noopener"><img class="aligncenter size-full wp-image-13696 lazyloaded" src="http://www.mr-wu.cn/wp-content/uploads/2019/04/fpga-power-xilinx.jpg" alt="" width="585" height="366" data-lazy-src="http://www.mr-wu.cn/wp-content/uploads/2019/04/fpga-power-xilinx.jpg" data-was-processed="true"><noscript><img class="aligncenter size-full wp-image-13696" src="http://www.mr-wu.cn/wp-content/uploads/2019/04/fpga-power-xilinx.jpg" alt="" width="585" height="366" /></noscript></a><strong>FPGA</strong>是电场可编程逻辑闸阵列（英语：Field Programmable Gate Array）的缩写，赛灵思是FPGA、可编程SoC及ACAP的发明者，也是<strong>全球第一大FPGA供应商</strong>。</p><p>FPGA市场份额第二名是Altera，于2015年12月28日，被英特尔收购。第三名是Lattice。</p><p>FPGA市场基本上国外Xilinx、Altera、Lattice三家为大， FPGA自Xilinx发明以来，主要的高端技术一直被其所掌控，据业内人士称，Xilinx在FPGA方面一直很高傲，甚至瞧不起Altera、Lattice等同样在FPGA方面具有雄厚实力的巨头。</p><p>我们知道未来5G市场规模非常巨大，在5G移动通信领域，我们有华为可以与国外厂商拜一下手腕，那面对5G 带给 FPGA 的丰厚红利，国内厂家能分上一杯羹吗？</p><p>目前，FPGA龙头厂商以Xilinx赛灵思、英特尔（并购了Altera）为主，Lattice莱迪思和Microsemi美高森美也占据了一定的市场份额。</p><p>在国家政策和资金的支持下，国内的FPGA玩家也不少，光上海地区来看，FPGA企业数量就超过了整个美国，但一个能打的都没有?</p><p>之前国内比较知名的FPGA厂商是京微雅格，其通过开创“硬件可重构，软件可编程”特点的FPGA+CPU+RAM+Flash可配置应用平台，拟在国外严重垄断的市场杀出一条血路来，以此撬动FPGA的中低端市场，但最终还是失败了。</p><p>目前国产能量产的FPGA中，规模最大、指标最先进的是紫光同创的 Titan 系列 FPGA，逻辑规模近 200K，支持 6.6Gbps 的 Serdes，这个指标距离国际先进水平还有很大的差距。其他厂商还有上海安路、广东高云，京微齐力、上海复旦微、AGM等企业，都以偏低端的 CPLD 和小规模 FPGA 器件为主，市场占有率低。</p><p>当然，米国对我国的FPGA产品与技术出口有苛刻的审核和禁运制度的，为使得国家在航天、航空乃至国家安全领域有FPGA可用，政府多年来投入了数百亿科研经费，通过逆向工程方式仿制的FPGA产品还是取得了一定的成绩，但由于知识产权、工艺和软件技术等多方面的限制，供给军工领域小批量试用还行，但受专利保护的限制，要进入更广阔的商业应用领域还是困难重重的，赛灵思、英特尔两家FPGA专利超过6000项，覆盖了单元架构、IP和互连等各方面核心技术，可以说技术壁垒实在太高了。</p><p><strong>允许弯道超车吗？限制中国FPGA产业发展的瓶颈</strong></p><p><span class="&quot;highlight">技术垄断</span></p><p>Xilinx、Intel、Lattice、Microsemi等厂商拥有共计<del>10000件专利，占总量60+%，<br> FPGA架构和核心电路、应用方案，基本被国外专利网覆盖，限制初创公司技术发展。</p><p><span class="&quot;highlight">人才垄断</span></p><p>全球绝大部分FPGA专业人才，集中在美国四家龙头厂商，其他厂商人才匮乏、难觅!</p><p><span class="&quot;highlight">资金投入门槛高</span></p><p>芯片需要最先进制造封测工艺、软件开发难度大、IP多而杂，需要众多产品才能支撑市场。因此，FPGA产业发展资金投入巨大!Xilinx研发投入</del>5亿美元/年，占净利润的84%! 国产厂商研发投入严重不足，紫光同创投入最高，也只有~1.5亿元/年! FPGA行业，投入大、见效慢，靠行业投资难以做起来，必须靠政府支持才有希望!</p><p><strong>希望还是要有的，而且必须要有！</strong></p><p>研发具有自主知识产权的FPGA技术与产品对打破美国企业和政府结合构成的垄断及涉及国家利益方面都意义深远。</p><p><span class="&quot;highlight">FPGA对国家安全至关重要</span></p><p>– 信息安全: 棱镜门监听、英国发现波音787客机的FPGA内置火焰病毒等事件，足见FPGA安全的重要性</p><p>– 产业安全: 中兴禁运危机等事件，引发中兴、华为等系统厂商对核心器件国产化的高度关注</p><p>– 国防安全: 美国对中国国防设备禁运所有FPGA，尤其高端FPGA“一颗难求”!</p><p>不论国产FPGA现状如何，我们都要抱着一个积极和乐观的心态去看待，弯道超车是不可能的了，只有脚踏实地，未来才可期。</p><p>未来包括AI、大数据、物联网、无人驾驶在内的新兴行业都处于快速变化的阶段，对极具灵活性、可重构的FPGA产品将有很大的需求，构成庞大的增量市场。避免与美国两家大品牌的正面冲突，寻找中低端市场的突破口，老wu还是相信未来国内会出现不错的FPGA公司。</p></p>
+<h1 id="ISE和Modelsim联合仿真"><a href="#ISE和Modelsim联合仿真" class="headerlink" title="ISE和Modelsim联合仿真"></a>ISE和Modelsim联合仿真</h1><p>相信很多人会遇到过这个问题，不知如何让ISE调用Modelsim进行仿真。我也迷糊了不少时间，查查找找，终于弄明白了，所以有了本文，和大家分享一下。我尽量讲得详细点儿，多多上图。</p>
+<p> <strong>我的环境：</strong></p>
+<blockquote>
+<p>Windows 7 64位，Xilinx ISE Design Suite 13.4（D:\Xilinx\13.4），ModelsimSE-64 10.1a（D:\modeltech64_10.1a， 哈，也是64位的）。不过32位的和64位的设置几乎没有什么区别。<br>先安装好ISE和Modelsim， 网上看过一些文章总说先装ISE再装Modelsim，不过我整过一阵，其实二者的顺序是无关紧要的。<br>安装过程不在本文的讨论范围内，就不多说了，不过一定要注意版本要合适，Modelsim的版本不要太低，这个可以自己到网上查一查，还有非常重要的一点是安装路径不能有中文或空格。</p>
+</blockquote>
+<h2 id="编译仿真库"><a href="#编译仿真库" class="headerlink" title="编译仿真库"></a>编译仿真库</h2><p>由于我装的Modelsim SE是通用版的，只自带了少许的仿真库（Simulation Library），所以还要编译一下Xilinx的仿真库。只有XE才自带Xilinx的仿真库，如果装的是XE版便不必编译仿真库了。编译库可以用ISE带界面的工具，也可以用命令行下的，前者方便，先讲前者。</p>
+<blockquote>
+<p>打开编译库工具“Simulation Library Compilation Wizard”：“开始—所有程序—Xilinx ISE Design Suite 13.4（版本不同就不同）—ISE Design Tools—64-bit Tools（32位的选32-bit Tools）—Simulation Library Compilation Wizard”。<br>注意，64位系统中默认安装了64位和32位的ISE，如果你想用32位的ISE，那你就得选32位的编译库工具，不能混着用的，而且Modelsim也得装上32位的版本，所以我建议64位系统的就用64位的ISE，而32位系统的没得选，只能用32位的。如图01所示。</p>
+</blockquote>
+<p><img src="https://bc2.net/assets/image/2019/ISE-Modelsim-pic1.png" alt="图01"></p>
+<blockquote>
+<p>打开工具之后，在“Select Simulator”下面选中你所装好的Modelsim版本，我这儿选“Modelsim SE”，在“Simulator Executable Location”下面填入Modelsim.exe的所在的文件夹，点“Browse…”按钮添加也行，我这儿是“D:\modeltech64_10.1a\win64”（不含双引号，下同，除非有特别的说明），如图02，然后Next。<br><img src="https://s2.ax1x.com/2019/10/21/K1ygMQ.png" alt="图02"></p>
+</blockquote>
+<blockquote>
+<p>之后是选择需要编译的语言，选“Both VHDL and Verilog”，一般两种都要用，如图03，然后Next。<br><img src="https://s2.ax1x.com/2019/10/21/K1yIiV.png" alt="图03"></p>
+</blockquote>
+<blockquote>
+<p>接下来是选择设备，默认是全选，如果有一些你实在用不上就不选吧，这样可以省点时间和硬盘空间，全选时挺大条的，如图04，还是Next。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022151420922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="图04"></p>
+<blockquote>
+<p>下一步默认就行，全选上，下面的两行东东留空即可，那是添加额外库的，第一行是路径，第二行是命令参数，无视之。如图05，Next。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022151436947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="图05"></p>
+<blockquote>
+<p>这一步比较关键，在“Output directory for compiled libraries”下面填入输出已编译库的路径，默认也行。个人建议新建一个单独的文件夹，好管理，只要版本一样的，下次直接拿来用，重装也不怕。不过文件夹的名字和整个路径中绝对不能有中文或空格，切记、切记！！！我这儿是“D:\modeltech64_10.1a\Xilinx_lib”。其他的选项默认便可，之后点“Launch Compiled Process”，如图06。之后就开始编译了，如图07。其实这一页是很有用处的，详情请点下面的那个“More Info”按键，不过帮助是英文的。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022151501530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="06"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191022151520693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="07"></p>
+<blockquote>
+<p>等待……编译完后就会出现一些编译日志，图08，Next，图09，Finish。只要没有Err就成，Warn无视。若有Err，就回顾下版本对不对，路径有没有中文或空格。<br><img src="https://img-blog.csdnimg.cn/20191022151542914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="08"><br><img src="https://img-blog.csdnimg.cn/20191022154407271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="09"></p>
+</blockquote>
+<h2 id="设置ISE和Modelsim的关联。"><a href="#设置ISE和Modelsim的关联。" class="headerlink" title="设置ISE和Modelsim的关联。"></a>设置ISE和Modelsim的关联。</h2><p>在“D:\Xilinx\13.4\ISE_DS\ISE”文件夹中找到“modelsim.ini”，“D:\Xilinx\13.4”这个是你的ISE安装目录，后半路径是一样的，实在不行就进入安装目录然后搜索“modelsim.ini”，如图2.1。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191022154449699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="2.1"></p>
+<blockquote>
+<p> 打开“modelsim.ini”，用记事本打开时不要用自动换行功能，菜单中“格式—自动换行”把勾去掉。个人不建议用记事本，写字板那就更不行了，有的文件用写字板改了会出现问题，搞编程类的总得有个好点儿的文本编辑工具吧，我用的是EmEditor，到网上搜一下吧，有不少呢。在第九行左右（可能是）找到“[Library]”，下面一行的“others = $MODEL_TECH/../modelsim.ini”和行的开头的分号（；）的全部都无视。那些行开头没有分号的，格式一般是“X···X = 路径”，一直到“[vcom]”之上的都要，选的仿真库多时可有好长的一段，全部复制。见图12、图13和图14。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022154530919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="12"><br><img src="https://img-blog.csdnimg.cn/2019102216022876.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="13"><br><img src="https://img-blog.csdnimg.cn/20191022160214743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="14"></p>
+<blockquote>
+<p>然后在Modelsim的安装目录下，我这儿是“D:\modeltech64_10.1a”，找到“modelsim.ini”，名字一样。先去换个文本编辑工具吧，用记事本打开它会是乱糟糟的一片，没法改。打开后，同样是找到“[Library]”，在它的下面粘贴上刚刚复制的那一大段东西，注意，行开头不要有分号（；），而且人家原有的就别动它，别删掉了。只要在“[Library]”和“[vcom]”之间粘贴就行，然后保存。如图15、图16和图17。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022160204811.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="15"><br><img src="https://img-blog.csdnimg.cn/20191022160146654.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="16"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191022154542307.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="17"></p>
+<blockquote>
+<p>打开ISE，“开始—所有程序—Xilinx ISE Design Suite 13.4（版本不同就不同）—ISE Design Tools—64-bit Project Navigator（32位的就开32-bit Project Navigator）”，图18。<br><img src="https://img-blog.csdnimg.cn/20191022154619864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="18"></p>
+</blockquote>
+<blockquote>
+<p>然后在ISE的菜单上“Edit—Preferences…”调出Preferences设置窗口，在左边的“Category”下选中“ISE General—Integrated Tools”。在Integrated Tools项设置中，右边的“Model Tech Simulator：”下面填入Modelsim.exe的文件路径，点旁边的“..”按键选中Modelsim.exe也行，我这儿是“D:\modeltech64_10.1a\win64\modelsim.exe”（不要双引号）。32位的可能是“D:\modeltech32_10.1a\win32\modelsim.exe”。如图19和图20。<br><img src="https://img-blog.csdnimg.cn/20191022163201248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="19"><br><img src="https://img-blog.csdnimg.cn/20191022155546687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="20"></p>
+</blockquote>
+<blockquote>
+<p>到现在已经把家伙准备好了，接下来就是使用它了。新建一个工程，图21，这步不多说，Next。<br><img src="https://img-blog.csdnimg.cn/20191022155953929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="21"><br>接下来这一步在“Simulator”一项选“Modelsim-SE Mixed”，“Mixed”支持两语言，“SE”是版本，选你自己对应的就成，其它项不讨论，如图22，Next，Finish。忘了选或想重新选的看图23。<br><img src="https://img-blog.csdnimg.cn/20191022160003349.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="22"><br><img src="https://img-blog.csdnimg.cn/20191022155530805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="23"></p>
+</blockquote>
+<blockquote>
+<p>新建你的VHDL或Verilog文件，这个不多说。<br>完成之后，切换到仿真模式，就是点工程上面的“Simulation”，可能不同版本会不一样，ISE9.1i 是在“Source for”的下拉菜单中选择Behavioral simulation，不过意思明白就行。建立Test Bench文件，若是VHDL的，也按上面说的处理一下，就是把那两个库声明一下。在“Hierarchy”框选中Test Bench文件，在下面的那个框中点“Modelsim Simulator”前的加号。展开得到“Simulate Behavioral Model”，在它上面点右键，选“Process Properties…”，如图27。<br><img src="https://img-blog.csdnimg.cn/20191022155518618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="27"></p>
+</blockquote>
+<blockquote>
+<p>在“Simulate Behavioral Model”上点右键，选“Run”就可以调用Modelsim进行仿真了，如图30。另外提一点，在ISE上也可以编译库的。在仿真模式中，在“Hierarchy”框中选中FPGA名，我这儿是“xc7a8-3csg324”（下面就是仿真文件）。然后在下面的框中点“Design Utilities”前面加号。展开后得到“Compile HDL Simulation Libraries”，在其上点右键，选“Run”，这样就会编译你的工程中所需的仿真库了 。</p>
+</blockquote>
+<h2 id="成功案例"><a href="#成功案例" class="headerlink" title="成功案例"></a>成功案例</h2><p>如下图，没有报错，ISE调用Modelsim正常。<br><img src="https://img-blog.csdnimg.cn/20191022154930555.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="28"></p>
 
       
     </div>
@@ -409,7 +480,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://upsame.coding.me/2019/10/25/2019-10-25-FPGA/" title="国产FPGA生存现状" target="_blank" rel="external">https://upsame.coding.me/2019/10/25/2019-10-25-FPGA/</a>
+      <a href="https://upsame.coding.me/2019/11/17/2019/2019-10-20-ISE-Modelsim-setting/" title="ISE和Modelsim联合仿真" target="_blank" rel="external">https://upsame.coding.me/2019/11/17/2019/2019-10-20-ISE-Modelsim-setting/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -456,9 +527,13 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2019/10/26/2019-10-26-FPGA%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/" title="FPGA学习网站推荐"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2019/11/17/2019/2019-10-22-individual-blog-setup/" title="个人博客建立规划"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
+    
+    <li class="next">
+      <a href="/2019/11/17/2019/2019-10-12-ocr-choose/" title="文本OCR与公式OCR的选择"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>
