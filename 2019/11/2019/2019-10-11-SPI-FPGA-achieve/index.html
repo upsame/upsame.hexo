@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | Upsame</title>
-  <meta name="description" content="本站是Upsame的技术分享博客。内容涵盖生活故事、FPGA技术、Python、计算机网络、数学建模、Linux系统、高可用架构、中间件使用、系统监控等相关的研究与知识分享。">
-<meta name="keywords" content="蒲山牧,Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蒲山牧">
-<meta property="og:url" content="https:&#x2F;&#x2F;upsame.coding.me&#x2F;archives&#x2F;page&#x2F;2&#x2F;index.html">
+  <title>SPI 总线协议与实现方法 | Upsame</title>
+  <meta name="description" content="SPI 总线协议与实现方法">
+<meta name="keywords" content="FPGA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPI 总线协议与实现方法">
+<meta property="og:url" content="https:&#x2F;&#x2F;upsame.coding.me&#x2F;2019&#x2F;11&#x2F;2019&#x2F;2019-10-11-SPI-FPGA-achieve&#x2F;index.html">
 <meta property="og:site_name" content="蒲山牧">
-<meta property="og:description" content="本站是Upsame的技术分享博客。内容涵盖生活故事、FPGA技术、Python、计算机网络、数学建模、Linux系统、高可用架构、中间件使用、系统监控等相关的研究与知识分享。">
+<meta property="og:description" content="SPI 总线协议与实现方法">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191011122423286.png">
+<meta property="og:updated_time" content="2019-11-18T09:00:11.475Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191011122423286.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://upsame.coding.me/archives/page/2/index.html">
+  <link rel="canonical" href="https://upsame.coding.me/2019/11/2019/2019-10-11-SPI-FPGA-achieve/index.html">
   
     <link rel="alternate" href="/atom.xml" title="蒲山牧" type="application/atom+xml">
   
@@ -332,74 +335,186 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 11 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-2019/2019-10-11-SPI-FPGA-achieve" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SPI 总线协议与实现方法
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2019" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2019
-            </a>
-            <!-- <a href="/archives/2019" class="archive-year">2019</a> -->
-          </h3>
-        </div>
-        <div id="collapse2019" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2019">
-        <div class="panel-body">
-          <div class="collection">
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/2019/2019-10-11-SPI-FPGA-achieve/" class="article-date">
+	  <time datetime="2019-11-17T11:38:05.616Z" itemprop="datePublished">2019-11-17</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/FPGA/">FPGA</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/FPGA/" rel="tag">FPGA</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/2019/2019-10-11-SPI-FPGA-achieve/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>原创<br>首发于我的个人博客 <a href="https://www.upsame.com" target="_blank" rel="noopener">www.upsame.com</a></p>
+</blockquote>
+<h2 id="SPI-总线协议与实现方法"><a href="#SPI-总线协议与实现方法" class="headerlink" title="SPI 总线协议与实现方法"></a>SPI 总线协议与实现方法</h2><h3 id="知识储备—参看链接："><a href="#知识储备—参看链接：" class="headerlink" title="知识储备—参看链接："></a>知识储备—参看链接：</h3><p><a href="https://www.cnblogs.com/deng-tao/p/6004280.html" target="_blank" rel="noopener">https://www.cnblogs.com/deng-tao/p/6004280.html</a></p>
+<p><a href="https://blog.csdn.net/qq_42282258/article/details/81436882" target="_blank" rel="noopener">https://blog.csdn.net/qq_42282258/article/details/81436882</a></p>
+<h3 id="正在使用的模式3，如图："><a href="#正在使用的模式3，如图：" class="headerlink" title="正在使用的模式3，如图："></a>正在使用的模式3，如图：</h3><p><img src="https://img-blog.csdnimg.cn/20191011122423286.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>发送端在时钟下降沿改变数据</li>
+<li>SCLK上升沿的阶段，数据保持稳定； </li>
+<li>接收端在时钟上升沿接受数据（对线上的数据进行读取）。</li>
+</ul>
+<p>目前已经在FPGA K7平台上实现并验证了SPI通信协议。<br>代码可参看<a href="https://blog.csdn.net/JustinLee2015/article/details/101925582" target="_blank" rel="noopener">FPGA实现SPI通信</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://upsame.coding.me/2019/11/2019/2019-10-11-SPI-FPGA-achieve/" title="SPI 总线协议与实现方法" target="_blank" rel="external">https://upsame.coding.me/2019/11/2019/2019-10-11-SPI-FPGA-achieve/</a>
+    </li>
     
-<a href="/2019/11/2019/2019-09-01-markdown/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2019-11-17T11:38:05.586Z" itemprop="datePublished">2019-11-17</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Markdown在不同平台下的使用感受
-</a>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
 
-  
-  
-    </div></div></div></section>
-  
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/upsame" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/upsame" target="_blank"><span class="text-dark">蒲山牧</span><small class="ml-1x">Communication Engineer</small></a></h3>
+        <div>I wanna to be better !</div>
+      </div>
+    </figure>
+  </div>
+</div>
 
-	    </div>
-  	</article>
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
   	
+      <div id="vcomments"></div>
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/archives/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next disabled">
-                <a href="javascript:;" target="_blank" rel="noopener">
-                    下一页
-                    <i class="icon icon-angle-right"></i>                    
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 2 of 2</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/11/2019/2019-10-12-ocr-choose/" title="文本OCR与公式OCR的选择"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/11/2019/2019-10-11-IPV6-learning/" title="IPV6的学习理解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -454,6 +569,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

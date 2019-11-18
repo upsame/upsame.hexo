@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>ISE和Modelsim联合仿真 | Upsame</title>
+  <meta name="description" content="ISE和Modelsim联合仿真">
+<meta name="keywords" content="FPGA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ISE和Modelsim联合仿真">
+<meta property="og:url" content="https:&#x2F;&#x2F;upsame.coding.me&#x2F;2019&#x2F;11&#x2F;2019&#x2F;2019-10-20-ISE-Modelsim-setting&#x2F;index.html">
+<meta property="og:site_name" content="蒲山牧">
+<meta property="og:description" content="ISE和Modelsim联合仿真">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;bc2.net&#x2F;assets&#x2F;image&#x2F;2019&#x2F;ISE-Modelsim-pic1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;21&#x2F;K1ygMQ.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;10&#x2F;21&#x2F;K1yIiV.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151420922.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151436947.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151501530.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151520693.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022151542914.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154407271.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154449699.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154530919.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019102216022876.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160214743.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160204811.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160146654.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154542307.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154619864.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022163201248.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155546687.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155953929.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022160003349.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155530805.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022155518618.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191022154930555.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-10-23T13:17:33.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;bc2.net&#x2F;assets&#x2F;image&#x2F;2019&#x2F;ISE-Modelsim-pic1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://upsame.coding.me/2019/11/2019/2019-10-20-ISE-Modelsim-setting/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="蒲山牧" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/upsame" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">蒲山牧</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Communication Engineer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/upsame" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/5G/">5G</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/FPGA/">FPGA</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%95%85%E4%BA%8B/">生活故事</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/5G/" style="font-size: 13px;">5G</a> <a href="/tags/FPGA/" style="font-size: 13.5px;">FPGA</a> <a href="/tags/IT/" style="font-size: 14px;">IT</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/computer-net/" style="font-size: 13px;">computer-net</a> <a href="/tags/life/" style="font-size: 13px;">life</a> <a href="/tags/mathmodel/" style="font-size: 13px;">mathmodel</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/IT/">IT</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/2019/2019-10-28-learn-Markdown/" class="title">学习 Markdown 文本标记语言</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-17T11:38:05.673Z" itemprop="datePublished">2019-11-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/5G/">5G</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/2019/2019-10-26-Correlation-Convolution/" class="title">函数的相关与卷积</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-17T11:38:05.668Z" itemprop="datePublished">2019-11-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/IT/">IT</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/2019/2019-10-22-individual-blog-setup/" class="title">个人博客建立规划</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-17T11:38:05.663Z" itemprop="datePublished">2019-11-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/FPGA/">FPGA</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/2019/2019-10-20-ISE-Modelsim-setting/" class="title">ISE和Modelsim联合仿真</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-17T11:38:05.629Z" itemprop="datePublished">2019-11-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/IT/">IT</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/2019/2019-10-12-ocr-choose/" class="title">文本OCR与公式OCR的选择</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-17T11:38:05.622Z" itemprop="datePublished">2019-11-17</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2019/2019-10-20-ISE-Modelsim-setting" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ISE和Modelsim联合仿真
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/2019/2019-10-20-ISE-Modelsim-setting/" class="article-date">
+	  <time datetime="2019-11-17T11:38:05.629Z" itemprop="datePublished">2019-11-17</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/FPGA/">FPGA</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/FPGA/" rel="tag">FPGA</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/2019/2019-10-20-ISE-Modelsim-setting/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>原创<br>首发于我的个人博客 <a href="https://www.upsame.com" target="_blank"> www.upsame.com </a></p>
+</blockquote>
+<h1 id="ISE和Modelsim联合仿真"><a href="#ISE和Modelsim联合仿真" class="headerlink" title="ISE和Modelsim联合仿真"></a>ISE和Modelsim联合仿真</h1><p>相信很多人会遇到过这个问题，不知如何让ISE调用Modelsim进行仿真。我也迷糊了不少时间，查查找找，终于弄明白了，所以有了本文，和大家分享一下。我尽量讲得详细点儿，多多上图。</p>
+<p> <strong>我的环境：</strong></p>
+<blockquote>
+<p>Windows 7 64位，Xilinx ISE Design Suite 13.4（D:\Xilinx\13.4），ModelsimSE-64 10.1a（D:\modeltech64_10.1a， 哈，也是64位的）。不过32位的和64位的设置几乎没有什么区别。<br>先安装好ISE和Modelsim， 网上看过一些文章总说先装ISE再装Modelsim，不过我整过一阵，其实二者的顺序是无关紧要的。<br>安装过程不在本文的讨论范围内，就不多说了，不过一定要注意版本要合适，Modelsim的版本不要太低，这个可以自己到网上查一查，还有非常重要的一点是安装路径不能有中文或空格。</p>
+</blockquote>
+<h2 id="编译仿真库"><a href="#编译仿真库" class="headerlink" title="编译仿真库"></a>编译仿真库</h2><p>由于我装的Modelsim SE是通用版的，只自带了少许的仿真库（Simulation Library），所以还要编译一下Xilinx的仿真库。只有XE才自带Xilinx的仿真库，如果装的是XE版便不必编译仿真库了。编译库可以用ISE带界面的工具，也可以用命令行下的，前者方便，先讲前者。</p>
+<blockquote>
+<p>打开编译库工具“Simulation Library Compilation Wizard”：“开始—所有程序—Xilinx ISE Design Suite 13.4（版本不同就不同）—ISE Design Tools—64-bit Tools（32位的选32-bit Tools）—Simulation Library Compilation Wizard”。<br>注意，64位系统中默认安装了64位和32位的ISE，如果你想用32位的ISE，那你就得选32位的编译库工具，不能混着用的，而且Modelsim也得装上32位的版本，所以我建议64位系统的就用64位的ISE，而32位系统的没得选，只能用32位的。如图01所示。</p>
+</blockquote>
+<p><img src="https://bc2.net/assets/image/2019/ISE-Modelsim-pic1.png" alt="图01"></p>
+<blockquote>
+<p>打开工具之后，在“Select Simulator”下面选中你所装好的Modelsim版本，我这儿选“Modelsim SE”，在“Simulator Executable Location”下面填入Modelsim.exe的所在的文件夹，点“Browse…”按钮添加也行，我这儿是“D:\modeltech64_10.1a\win64”（不含双引号，下同，除非有特别的说明），如图02，然后Next。<br><img src="https://s2.ax1x.com/2019/10/21/K1ygMQ.png" alt="图02"></p>
+</blockquote>
+<blockquote>
+<p>之后是选择需要编译的语言，选“Both VHDL and Verilog”，一般两种都要用，如图03，然后Next。<br><img src="https://s2.ax1x.com/2019/10/21/K1yIiV.png" alt="图03"></p>
+</blockquote>
+<blockquote>
+<p>接下来是选择设备，默认是全选，如果有一些你实在用不上就不选吧，这样可以省点时间和硬盘空间，全选时挺大条的，如图04，还是Next。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022151420922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="图04"></p>
+<blockquote>
+<p>下一步默认就行，全选上，下面的两行东东留空即可，那是添加额外库的，第一行是路径，第二行是命令参数，无视之。如图05，Next。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022151436947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="图05"></p>
+<blockquote>
+<p>这一步比较关键，在“Output directory for compiled libraries”下面填入输出已编译库的路径，默认也行。个人建议新建一个单独的文件夹，好管理，只要版本一样的，下次直接拿来用，重装也不怕。不过文件夹的名字和整个路径中绝对不能有中文或空格，切记、切记！！！我这儿是“D:\modeltech64_10.1a\Xilinx_lib”。其他的选项默认便可，之后点“Launch Compiled Process”，如图06。之后就开始编译了，如图07。其实这一页是很有用处的，详情请点下面的那个“More Info”按键，不过帮助是英文的。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022151501530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="06"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191022151520693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="07"></p>
+<blockquote>
+<p>等待……编译完后就会出现一些编译日志，图08，Next，图09，Finish。只要没有Err就成，Warn无视。若有Err，就回顾下版本对不对，路径有没有中文或空格。<br><img src="https://img-blog.csdnimg.cn/20191022151542914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="08"><br><img src="https://img-blog.csdnimg.cn/20191022154407271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="09"></p>
+</blockquote>
+<h2 id="设置ISE和Modelsim的关联。"><a href="#设置ISE和Modelsim的关联。" class="headerlink" title="设置ISE和Modelsim的关联。"></a>设置ISE和Modelsim的关联。</h2><p>在“D:\Xilinx\13.4\ISE_DS\ISE”文件夹中找到“modelsim.ini”，“D:\Xilinx\13.4”这个是你的ISE安装目录，后半路径是一样的，实在不行就进入安装目录然后搜索“modelsim.ini”，如图2.1。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191022154449699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="2.1"></p>
+<blockquote>
+<p> 打开“modelsim.ini”，用记事本打开时不要用自动换行功能，菜单中“格式—自动换行”把勾去掉。个人不建议用记事本，写字板那就更不行了，有的文件用写字板改了会出现问题，搞编程类的总得有个好点儿的文本编辑工具吧，我用的是EmEditor，到网上搜一下吧，有不少呢。在第九行左右（可能是）找到“[Library]”，下面一行的“others = $MODEL_TECH/../modelsim.ini”和行的开头的分号（；）的全部都无视。那些行开头没有分号的，格式一般是“X···X = 路径”，一直到“[vcom]”之上的都要，选的仿真库多时可有好长的一段，全部复制。见图12、图13和图14。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022154530919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="12"><br><img src="https://img-blog.csdnimg.cn/2019102216022876.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="13"><br><img src="https://img-blog.csdnimg.cn/20191022160214743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="14"></p>
+<blockquote>
+<p>然后在Modelsim的安装目录下，我这儿是“D:\modeltech64_10.1a”，找到“modelsim.ini”，名字一样。先去换个文本编辑工具吧，用记事本打开它会是乱糟糟的一片，没法改。打开后，同样是找到“[Library]”，在它的下面粘贴上刚刚复制的那一大段东西，注意，行开头不要有分号（；），而且人家原有的就别动它，别删掉了。只要在“[Library]”和“[vcom]”之间粘贴就行，然后保存。如图15、图16和图17。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191022160204811.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="15"><br><img src="https://img-blog.csdnimg.cn/20191022160146654.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="16"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191022154542307.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="17"></p>
+<blockquote>
+<p>打开ISE，“开始—所有程序—Xilinx ISE Design Suite 13.4（版本不同就不同）—ISE Design Tools—64-bit Project Navigator（32位的就开32-bit Project Navigator）”，图18。<br><img src="https://img-blog.csdnimg.cn/20191022154619864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="18"></p>
+</blockquote>
+<blockquote>
+<p>然后在ISE的菜单上“Edit—Preferences…”调出Preferences设置窗口，在左边的“Category”下选中“ISE General—Integrated Tools”。在Integrated Tools项设置中，右边的“Model Tech Simulator：”下面填入Modelsim.exe的文件路径，点旁边的“..”按键选中Modelsim.exe也行，我这儿是“D:\modeltech64_10.1a\win64\modelsim.exe”（不要双引号）。32位的可能是“D:\modeltech32_10.1a\win32\modelsim.exe”。如图19和图20。<br><img src="https://img-blog.csdnimg.cn/20191022163201248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="19"><br><img src="https://img-blog.csdnimg.cn/20191022155546687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="20"></p>
+</blockquote>
+<blockquote>
+<p>到现在已经把家伙准备好了，接下来就是使用它了。新建一个工程，图21，这步不多说，Next。<br><img src="https://img-blog.csdnimg.cn/20191022155953929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="21"><br>接下来这一步在“Simulator”一项选“Modelsim-SE Mixed”，“Mixed”支持两语言，“SE”是版本，选你自己对应的就成，其它项不讨论，如图22，Next，Finish。忘了选或想重新选的看图23。<br><img src="https://img-blog.csdnimg.cn/20191022160003349.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="22"><br><img src="https://img-blog.csdnimg.cn/20191022155530805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="23"></p>
+</blockquote>
+<blockquote>
+<p>新建你的VHDL或Verilog文件，这个不多说。<br>完成之后，切换到仿真模式，就是点工程上面的“Simulation”，可能不同版本会不一样，ISE9.1i 是在“Source for”的下拉菜单中选择Behavioral simulation，不过意思明白就行。建立Test Bench文件，若是VHDL的，也按上面说的处理一下，就是把那两个库声明一下。在“Hierarchy”框选中Test Bench文件，在下面的那个框中点“Modelsim Simulator”前的加号。展开得到“Simulate Behavioral Model”，在它上面点右键，选“Process Properties…”，如图27。<br><img src="https://img-blog.csdnimg.cn/20191022155518618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="27"></p>
+</blockquote>
+<blockquote>
+<p>在“Simulate Behavioral Model”上点右键，选“Run”就可以调用Modelsim进行仿真了，如图30。另外提一点，在ISE上也可以编译库的。在仿真模式中，在“Hierarchy”框中选中FPGA名，我这儿是“xc7a8-3csg324”（下面就是仿真文件）。然后在下面的框中点“Design Utilities”前面加号。展开后得到“Compile HDL Simulation Libraries”，在其上点右键，选“Run”，这样就会编译你的工程中所需的仿真库了 。</p>
+</blockquote>
+<h2 id="成功案例"><a href="#成功案例" class="headerlink" title="成功案例"></a>成功案例</h2><p>如下图，没有报错，ISE调用Modelsim正常。<br><img src="https://img-blog.csdnimg.cn/20191022154930555.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="28"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://upsame.coding.me/2019/11/2019/2019-10-20-ISE-Modelsim-setting/" title="ISE和Modelsim联合仿真" target="_blank" rel="external">https://upsame.coding.me/2019/11/2019/2019-10-20-ISE-Modelsim-setting/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/upsame" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/upsame" target="_blank"><span class="text-dark">蒲山牧</span><small class="ml-1x">Communication Engineer</small></a></h3>
+        <div>I wanna to be better !</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/11/2019/2019-10-22-individual-blog-setup/" title="个人博客建立规划"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/11/2019/2019-10-12-ocr-choose/" title="文本OCR与公式OCR的选择"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/upsame" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
