@@ -268,21 +268,6 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%95%85%E4%BA%8B/">生活故事</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/11/before/2019-09-17-fengyuxiangBook.html" class="title">冯玉祥自传抄录</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
                 <a class="category-link" href="/categories/IT/">IT</a>
               </p>
               <p class="item-title">
@@ -317,6 +302,21 @@
               </p>
               <p class="item-title">
                 <a href="/2019/11/before/2019-09-16-bookmarks.html" class="title">历史书签2019</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%95%85%E4%BA%8B/">生活故事</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/before/2019-09-17-fengyuxiangBook.html" class="title">冯玉祥自传抄录</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
@@ -391,13 +391,18 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="Ubuntu18-04中使用KVM"><a href="#Ubuntu18-04中使用KVM" class="headerlink" title="Ubuntu18.04中使用KVM"></a>Ubuntu18.04中使用KVM</h1><p>首先，ubuntu本身就是一个虚拟机，是我在教研室的Windows 10电脑使用VMware Workstation创建的虚拟机，分配的内存为4G和双处理器+双核（一共应该是4个线程）。</p>
-<p>我在这个Ubuntu虚拟机中又使用KVM创建了一个虚拟机，安装<code>Lite</code>操作系统。<br>按照网上的教材走，最开始鼠标不同步的问题，似乎有解决方案，但是应用后没有直接生效，可能是要重启虚拟机吧。之后第二天我来的时候开启虚拟机重装KVM 虚拟机时鼠标问题就没有了。然后安装正常。</p>
-<p>KVM分配了10GB空间，分配了Ubuntu的两个核，1G内存。安装后使用了59%，运行还比较流畅。<br>感觉界面比Ubuntu更好用呢，很有windows的风格。如下：<br><img src="https://img-blog.csdnimg.cn/20190929105123493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="Lite 桌面截图"><br>需要明确的是默认KVM中虚拟机和宿主机不能直接复制粘贴，需要一定的增强工具，但是不管了。</p>
+        <h1 id="ubuntu1804中使用kvm"><a class="markdownIt-Anchor" href="#ubuntu1804中使用kvm"></a> Ubuntu18.04中使用KVM</h1>
+<p>首先，ubuntu本身就是一个虚拟机，是我在教研室的Windows 10电脑使用VMware Workstation创建的虚拟机，分配的内存为4G和双处理器+双核（一共应该是4个线程）。</p>
+<p>我在这个Ubuntu虚拟机中又使用KVM创建了一个虚拟机，安装<code>Lite</code>操作系统。<br />
+按照网上的教材走，最开始鼠标不同步的问题，似乎有解决方案，但是应用后没有直接生效，可能是要重启虚拟机吧。之后第二天我来的时候开启虚拟机重装KVM 虚拟机时鼠标问题就没有了。然后安装正常。</p>
+<p>KVM分配了10GB空间，分配了Ubuntu的两个核，1G内存。安装后使用了59%，运行还比较流畅。<br />
+感觉界面比Ubuntu更好用呢，很有windows的风格。如下：<br />
+<img src="https://img-blog.csdnimg.cn/20190929105123493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0p1c3RpbkxlZTIwMTU=,size_16,color_FFFFFF,t_70" alt="Lite 桌面截图" /><br />
+需要明确的是默认KVM中虚拟机和宿主机不能直接复制粘贴，需要一定的增强工具，但是不管了。</p>
 <p>默认使用NAT方式联网，可以联网成功（打开了百度），网桥连接似乎有点问题，以后用到了再说吧。</p>
 <p>所以要体验Lite linux，就可以再这个虚拟机下体验。（虚拟机中的虚拟机）。</p>
 <p>对于KVM，基本的虚拟机功能都有，但是似乎没有VMware tool这样的好工具可以用。KVM只能运行于linux系统上，Virtualbox和VMware都可以跨平台。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190929105340136.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190929105340136.png" alt="在这里插入图片描述" /></p>
 <p>=================================================================================</p>
 <p>KVM是一个集成的Linux解决方案，我发现用它创建的虚拟机响应速度不错，唯一的缺陷是少针对桌面解决方案的功能，如3D图形加速，或GUI管理工具，<strong>所以用来搭服务器应该比较适用</strong>。</p>
 
