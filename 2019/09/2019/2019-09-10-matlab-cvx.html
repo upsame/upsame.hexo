@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="蒲山牧">
 <meta property="og:description" content="Matlab中CVX工具箱使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T12:56:28.582Z">
+<meta property="og:updated_time" content="2019-11-19T02:26:50.044Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="https://upsame.coding.me/2019/09/2019/2019-09-10-matlab-cvx.html">
@@ -37,6 +37,8 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -181,7 +183,7 @@
     	
         <li><a href="https://github.com/upsame" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        <li><a href="http://weibo.com/oksame" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
         <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
         
@@ -253,37 +255,7 @@
                 <a class="category-link" href="/categories/IT/">IT</a>
               </p>
               <p class="item-title">
-                <a href="/2019/11/before/2019-08-04-google.html" class="title">谷歌，被尘封的过去！</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/IT/">IT</a>
-              </p>
-              <p class="item-title">
                 <a href="/2019/11/before/2019-08-09-12hour.html" class="title">漫画 |《程序员十二时辰》，居然是这样的！内容过于真实 ...</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/IT/">IT</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/11/before/2019-08-21-bat.html" class="title">互联网从此没有 BAT</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
@@ -299,6 +271,36 @@
               </p>
               <p class="item-title">
                 <a href="/2019/11/before/2019-09-17-fengyuxiangBook.html" class="title">冯玉祥自传抄录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/IT/">IT</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/before/2019-08-04-google.html" class="title">谷歌，被尘封的过去！</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/IT/">IT</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/before/2019-08-21-bat.html" class="title">互联网从此没有 BAT</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-11-18T10:46:19.082Z" itemprop="datePublished">2019-11-18</time>
@@ -332,6 +334,15 @@
 
   
   
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#matlab中cvx工具箱使用"><span class="toc-number">1.</span> <span class="toc-text"> Matlab中CVX工具箱使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text"> 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用实例"><span class="toc-number">1.2.</span> <span class="toc-text"> 使用实例</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
 <main class="main" role="main">
   <div class="content">
   <article id="post-2019/2019-09-10-matlab-cvx" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -367,37 +378,66 @@
 
 
         
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
 
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/09/2019/2019-09-10-matlab-cvx.html#comments" class="article-comment-link">评论</a></span>
         
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 707(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="Matlab中CVX工具箱使用"><a href="#Matlab中CVX工具箱使用" class="headerlink" title="Matlab中CVX工具箱使用"></a>Matlab中CVX工具箱使用</h1><p>CVX是一个凸优化解决工具，需要在Matlab上使用。<br>CVX让Matlab变成一个模型语言，可以使用Matlab的标准语法完成优化问题的求解。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+        <h1 id="matlab中cvx工具箱使用"><a class="markdownIt-Anchor" href="#matlab中cvx工具箱使用"></a> Matlab中CVX工具箱使用</h1>
+<p>CVX是一个凸优化解决工具，需要在Matlab上使用。<br />
+CVX让Matlab变成一个模型语言，可以使用Matlab的标准语法完成优化问题的求解。</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<ol>
 <li>下载<a href="http://cvxr.com/cvx/" target="_blank" rel="noopener">官方安装包</a>，解压缩到任意路径，建议和Matlab放到一起。</li>
 <li>打开Matlab，切换路径到CVX的存放路径，Matlab中运行cvx_setup命令即完成安装。</li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd C:\personal\cvx</span><br><span class="line">cvx_setup</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>CVX 支持的解析器<code>slover</code><br>  该版本的cvx支持4种具有不同特性的解析器<code>slover</code> :  SeDuMi、SDPT3、MOSEK 、Gurobi </li>
+<li>CVX 支持的解析器<code>slover</code><br />
+该版本的cvx支持4种具有不同特性的解析器<code>slover</code> :  SeDuMi、SDPT3、MOSEK 、Gurobi</li>
 </ul>
 <blockquote>
 <p>所以使用<code>cvx</code>并不需要去额外下载一个<code>slover</code>，因为CVX的安装包中已经包含了 <code>SeDuMi and SDPT3</code>，这两个<code>slover</code>是免费许可的，默认启用的是SDPT3（The default <code>solver</code> is currently SDPT3）。</p>
 </blockquote>
 <ul>
 <li>MOSEK 包含在CVX的教育许可证和商业许可证中，使用教育邮箱申请教育版许可，即可免费使用。</li>
-<li>Gurobi and MOSEK 同样也可以搭载到CVX中去，但是你需要获得专业版许可证<code>CVX Professional license</code>才能使用这些功能。  <blockquote>
+<li>Gurobi and MOSEK 同样也可以搭载到CVX中去，但是你需要获得专业版许可证<code>CVX Professional license</code>才能使用这些功能。</li>
+</ul>
+<blockquote>
 <p><strong>(可以下载带有Gurobi and MOSEK的CVX包或单独下载Gurobi and MOSEK，之后安装专业版许可证)</strong> ，两个公司均有教育许可。</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><p>1、官网实例，目标是解决如下优化问题：<br>$$<br>    \begin{array}{ll}<br>    \text{minimize} &amp; |Ax-b|_2 \<br>    \text{subject to} &amp; Cx=d \<br>    &amp; |x|_\infty\leq e<br>    \end{array}<br>$$<br>在Matlab中使用以下代码即可完成优化求解，</p>
+<h2 id="使用实例"><a class="markdownIt-Anchor" href="#使用实例"></a> 使用实例</h2>
+<p>1、官网实例，目标是解决如下优化问题：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.15999999999999992em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>minimize</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">∥</mi><mi>A</mi><mi>x</mi><mo>−</mo><mi>b</mi><msub><mi mathvariant="normal">∥</mi><mn>2</mn></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext>subject to</mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>C</mi><mi>x</mi><mo>=</mo><mi>d</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">∥</mi><mi>x</mi><msub><mi mathvariant="normal">∥</mi><mi mathvariant="normal">∞</mi></msub><mo>≤</mo><mi>e</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">	\begin{array}{ll} 
+	\text{minimize} &amp; \|Ax-b\|_2 \\ 
+	\text{subject to} &amp; Cx=d \\ 
+	&amp; \|x\|_\infty\leq e 
+	\end{array}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.6000000000000005em;vertical-align:-1.5500000000000007em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">minimize</span></span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">subject to</span></span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∥</span><span class="mord mathdefault">A</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">b</span><span class="mord"><span class="mord">∥</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">d</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∥</span><span class="mord mathdefault">x</span><span class="mord"><span class="mord">∥</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
+<p>在Matlab中使用以下代码即可完成优化求解，</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="number">20</span>; n = <span class="number">10</span>; p = <span class="number">4</span>;</span><br><span class="line">A = randn(m,n); b = randn(m,<span class="number">1</span>);</span><br><span class="line">C = randn(p,n); d = randn(p,<span class="number">1</span>); e = rand;</span><br><span class="line">cvx_begin</span><br><span class="line">    variable x(n)</span><br><span class="line">    minimize( norm( A * x - b, <span class="number">2</span> ) )	%目标函数</span><br><span class="line">    subject to</span><br><span class="line">        C * x == d						%约束条件<span class="number">1</span></span><br><span class="line">        norm( x, Inf ) &lt;= e				%约束条件<span class="number">2</span></span><br><span class="line">cvx_end</span><br></pre></td></tr></table></figure>
-
-<p>2、上面的自变量是单个向量，下面给出一个多个变量的求解方案；<br>还是一个凸函数最优化问题，主要问题如下：<br>首先要把需要解决的问题写成<code>convex optimization</code>的标准问题，即明确目标函数和条件约束。<br>$$<br>\begin{array}{l}{\max <em>{\mathbf{g}, t}  t} \ {\text { s.t. } \Re\left{2 \mathbf{g}</em>{m-1}^{H} \mathbf{M}<em>{l \hat{l}} \mathbf{g}-\mathbf{g}</em>{m-1}^{H} \mathbf{M}<em>{l \hat{l}} \mathbf{g}</em>{m-1}^{H}\right} \geq t, \forall l \neq \hat{l}} \ {\quad \quad|\mathbf{g}|^{2} \leq M_p}\end{array}<br>$$<br>其中，$M_{l\hat{l}}$为矩阵，$M_p$为固定值，约束向量$g$的幅度。</p>
+<p>2、上面的自变量是单个向量，下面给出一个多个变量的求解方案；<br />
+还是一个凸函数最优化问题，主要问题如下：<br />
+首先要把需要解决的问题写成<code>convex optimization</code>的标准问题，即明确目标函数和条件约束。</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.15999999999999992em" columnalign="left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msub><mo><mi>max</mi><mo>⁡</mo></mo><mrow><mi mathvariant="bold">g</mi><mo separator="true">,</mo><mi>t</mi></mrow></msub><mi>t</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext> s.t. </mtext><mi mathvariant="normal">ℜ</mi><mrow><mo fence="true">{</mo><mn>2</mn><msubsup><mi mathvariant="bold">g</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>H</mi></msubsup><msub><mi mathvariant="bold">M</mi><mrow><mi>l</mi><mover accent="true"><mi>l</mi><mo>^</mo></mover></mrow></msub><mi mathvariant="bold">g</mi><mo>−</mo><msubsup><mi mathvariant="bold">g</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>H</mi></msubsup><msub><mi mathvariant="bold">M</mi><mrow><mi>l</mi><mover accent="true"><mi>l</mi><mo>^</mo></mover></mrow></msub><msubsup><mi mathvariant="bold">g</mi><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><mi>H</mi></msubsup><mo fence="true">}</mo></mrow><mo>≥</mo><mi>t</mi><mo separator="true">,</mo><mi mathvariant="normal">∀</mi><mi>l</mi><mi mathvariant="normal">≠</mi><mover accent="true"><mi>l</mi><mo>^</mo></mover></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mspace width="1em"/><mspace width="1em"/><mi mathvariant="normal">∥</mi><mi mathvariant="bold">g</mi><msup><mi mathvariant="normal">∥</mi><mn>2</mn></msup><mo>≤</mo><msub><mi>M</mi><mi>p</mi></msub></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{l}{\max _{\mathbf{g}, t}  t} \\ {\text { s.t. } \Re\left\{2 \mathbf{g}_{m-1}^{H} \mathbf{M}_{l \hat{l}} \mathbf{g}-\mathbf{g}_{m-1}^{H} \mathbf{M}_{l \hat{l}} \mathbf{g}_{m-1}^{H}\right\} \geq t, \forall l \neq \hat{l}} \\ {\quad \quad\|\mathbf{g}\|^{2} \leq M_p}\end{array}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.71788em;vertical-align:-1.6089400000000003em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.1089399999999996em;"><span style="top:-4.26894em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.28055599999999997em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathbf mtight" style="margin-right:0.01597em;">g</span></span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span></span></span></span><span style="top:-2.9510599999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord text"><span class="mord"> s.t. </span></span><span class="mord">ℜ</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">{</span></span><span class="mord">2</span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999998em;"><span style="top:-2.451892em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30643899999999996em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mord mathbf">M</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3742840000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-2.9634400000000003em;"><span class="pstrut" style="height:2.7em;"></span><span class="accent-body" style="left:-0.16666em;"><span class="mtight">^</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3257159999999999em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">g</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999998em;"><span style="top:-2.451892em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30643899999999996em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mord mathbf">M</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3742840000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-2.9634400000000003em;"><span class="pstrut" style="height:2.7em;"></span><span class="accent-body" style="left:-0.16666em;"><span class="mtight">^</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3257159999999999em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999998em;"><span style="top:-2.451892em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.30643899999999996em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">}</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∀</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.16666em;">^</span></span></span></span></span></span></span></span></span><span style="top:-1.7510599999999998em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:1em;"></span><span class="mord">∥</span><span class="mord"><span class="mord mathbf" style="margin-right:0.01597em;">g</span></span><span class="mord"><span class="mord">∥</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.6089400000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mrow><mi>l</mi><mover accent="true"><mi>l</mi><mo>^</mo></mover></mrow></msub></mrow><annotation encoding="application/x-tex">M_{l\hat{l}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0090459999999999em;vertical-align:-0.3257159999999999em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3742840000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span><span style="top:-2.9634400000000003em;"><span class="pstrut" style="height:2.7em;"></span><span class="accent-body" style="left:-0.16666em;"><span class="mtight">^</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3257159999999999em;"><span></span></span></span></span></span></span></span></span></span>为矩阵，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">M_p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>为固定值，约束向量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span>的幅度。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cvx_begin</span><br><span class="line">    variable g(n,<span class="number">1</span>) t</span><br><span class="line">    maximize (t)	%目标函数</span><br><span class="line">    subject to 		%约束条件</span><br><span class="line">        <span class="keyword">for</span> i = <span class="number">1</span>:<span class="number">56</span></span><br><span class="line">            real(g_m<span class="string">'*M(i)*g - g_m'</span>*M(i)*g_m) &gt;= t;</span><br><span class="line">        end </span><br><span class="line">        norm(g) &lt;= M;</span><br><span class="line">cvx_end</span><br></pre></td></tr></table></figure>
 <p>在Matlab中可以使用循环语句完成大量约束的枚举，更加方便。</p>
 
@@ -461,6 +501,15 @@
     
     
     
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
   </ul>
   
   
@@ -473,7 +522,7 @@
   
   <div class="bar-right">
     
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,wechat"></div>
     
   </div>
   </div>
@@ -532,7 +581,7 @@
     	
         <li><a href="https://github.com/upsame" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        <li><a href="http://weibo.com/oksame" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
         <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
         
@@ -579,6 +628,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
 
 
